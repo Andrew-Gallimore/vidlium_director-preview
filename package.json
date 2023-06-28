@@ -1,0 +1,16 @@
+{
+  "name": "vidlium-peripheral-website",
+  "version": "1.0.0",
+  "description": "The surrounding pages around in the vidlium site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Gallimore",
+  "license": "ISC",
+  "dependencies": {
+    "devcert": "^1.2.2",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security"
+  }
+}
