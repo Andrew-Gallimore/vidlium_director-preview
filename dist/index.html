@@ -148,11 +148,45 @@
                     </div>
                 </div>
             </div>
+
             <div class="content-pages">
-                <div class="page">
-                    <h1>Room 1</h1>
+                <div class="room page">
+                    <div class="controls-nav">
+                        <h1 class="room-name">Room 1</h1>
+                        <div class="zoom">
+                            <input type="range" min="100" value="300" max="500" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="video-grid scrollbar--dark">
+                        <div class="scroll">
+                            <div class="person">
+                                <div class="video one">1</div>
+                            </div>
+                            <div class="person">
+                                <div class="video one">2</div>
+                            </div>
+                            <div class="person">
+                                <div class="video two">3</div>
+                            </div>
+                            <div class="person">
+                                <div class="video two">4</div>
+                            </div>
+                            <div class="person">
+                                <div class="video one">5</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plugins">
+                        <div class="plugin">
+                            <h2>Chat</h2>
+                        </div>
+                        <div class="plugin">
+                            <h2>Music</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="right-panel-wrapper">
                 <div class="right-panel">
 
@@ -374,5 +408,11 @@
 <script src="js/lib/paging.js"></script>
 <script src="js/lib/inputs.js"></script>
 <script src="js/lib/whratio.js"></script>
-<script src="js/ui.js"></script>
+<script defer src="js/ui.js"></script>
+
+<!-- Async css -->
+<link rel="stylesheet" href="https://unpkg.com/flexmasonry/dist/flexmasonry.css">
+<script defer src="https://unpkg.com/flexmasonry/dist/flexmasonry.js"></script>
+
+<script defer src="js/lib/video-layout.js"></script>
 </html>
