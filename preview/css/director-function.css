@@ -382,7 +382,6 @@ body {
 
 
 .all-controls .left-panel .director-controls {
-    position: relative;
     /* background: var(--importbox-bg-transparent); */
     background: #16161646;
     padding: 8px;
@@ -392,14 +391,57 @@ body {
     border-radius: 5px;
 }
 
-.all-controls .left-panel .expand-window {
+.pane {
+    position: relative;
+}
+.pane .pane-control {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     top: 0;
     translate: 0 -50%;
     right: -2px;
+    display: flex;
+    flex-direction: row;
+}
+.pane .move-pane {
+    position: relative;
+    width: 32px;
+    height: 24px;
+    margin-right: 4px;
+    background: var(--expandwindow-bg);
+    border: solid 2px var(--buttonbg);
+    /* --buttonbg and related colors are found on btn-styles.css */
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+.pane .move-pane img:nth-child(1) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% calc(-50% - 3px);
+    width: 20px;
+    height: 20px;
+    /* margin-bottom: 6px; */
+}
+.pane .move-pane img:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% calc(-50% + 3px);
+    width: 20px;
+    height: 20px;
+    /* margin-top: 6px; */
+}
+.pane .move-pane:hover {
+    background: var(--expandwindow-bg-hover);
+}
+.pane .move-pane:active {
+    background: var(--expandwindow-bg-active);
+    transition: background 0s;
+}
+.pane .expand-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 24px;
     height: 24px;
     background: var(--expandwindow-bg);
@@ -408,14 +450,14 @@ body {
     border-radius: 4px;
     transition: background 0.15s;
 }
-.all-controls .left-panel .expand-window:hover {
+.pane .expand-window:hover {
     background: var(--expandwindow-bg-hover);
 }
-.all-controls .left-panel .expand-window:active {
+.pane .expand-window:active {
     background: var(--expandwindow-bg-active);
     transition: background 0s;
 }
-.all-controls .left-panel .expand-window img {
+.pane .expand-window img {
     width: 20px;
     height: 20px;
     transform: rotate(-45deg);
@@ -507,7 +549,7 @@ body {
     grid-template-columns: [left] auto [mid] min-content [right];
     grid-template-rows: [top] min-content [mid] auto [bottom];
 }
-/* END Middle panel CSS */
+
 
 .content-pages .room.page .controls-nav {
     grid-column: left / right;
@@ -530,6 +572,7 @@ body {
 .content-pages .room.page .video-grid {
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     direction: rtl;
 }
 .content-pages .room.page .video {
@@ -553,10 +596,12 @@ body {
     padding: 8px;
     margin-bottom: 5px;
 }
+/* END Middle panel CSS */
+
 
 
 /* BEGIN Right panel CSS */
-.all-controls .right-panel-wrapper {
+.all-controls .right-panel {
     min-width: 250px;
     width: 21vw;
 }

@@ -6,9 +6,9 @@ const devcert = require('devcert')
 // Setting up the Express App 
 const app = express();
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/dist/home.html');
+  res.sendFile(__dirname + '/preview/home.html');
 });
-app.use('/', express.static(__dirname + '/dist/'));
+app.use('/', express.static(__dirname + '/preview/'));
 
 
 // Creating SSL Node Server for the Express App
